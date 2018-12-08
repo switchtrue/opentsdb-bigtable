@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: opentsdb-read-lb
+spec:
+  ports:
+    - port: 4241
+      targetPort: 4242
+      protocol: TCP
+  selector:
+    app: opentsdb-read
+  type: LoadBalancer
